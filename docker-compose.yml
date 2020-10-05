@@ -1,0 +1,17 @@
+services:
+  api:
+    build:
+      context: api
+      dockerfile: Dockerfile.local
+    volumes:
+    - ./api:/code
+    - /code/node_modules
+    ports:
+    - "3000:3000"
+  chrome:
+    build:
+      context: chrome
+      dockerfile: Dockerfile.local
+    ports:
+    - "3001:3001"
+version: '3'

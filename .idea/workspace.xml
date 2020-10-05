@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09df69cf-d93d-4b73-84c2-d8d634659a33" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iKfRIi5XWXMO6v2lMWnt1R8Qj7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09df69cf-d93d-4b73-84c2-d8d634659a33" name="Default Changelist" comment="" />
+      <created>1601661194620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601661194620</updated>
+      <workItem from="1601661198338" duration="17161000" />
+      <workItem from="1601925593782" duration="7069000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2023" y="1254" width="708" height="518" key="#ESLint" timestamp="1601665770110">
+      <screen x="1200" y="840" width="1920" height="1080" />
+    </state>
+    <state x="2023" y="1254" key="#ESLint/3120.840.1920.1080/1200.840.1920.1080/0.0.1200.1880/5040.840.1920.1080@1200.840.1920.1080" timestamp="1601665770110" />
+    <state x="3943" y="1254" width="708" height="518" key="#ESLint/3120.840.1920.1080/1200.840.1920.1080/0.0.1200.1880/5040.840.1920.1080@3120.840.1920.1080" timestamp="1601664583804" />
+    <state x="3799" y="1164" width="551" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601929579026">
+      <screen x="3120" y="840" width="1920" height="1080" />
+    </state>
+    <state x="3799" y="1164" width="551" height="385" key="#com.intellij.fileTypes.FileTypeChooser/3120.840.1920.1080/1200.840.1920.1080/0.0.1200.1880/5040.840.1920.1080@3120.840.1920.1080" timestamp="1601929579026" />
+    <state x="3584" y="994" key="SettingsEditor" timestamp="1601664679612">
+      <screen x="3120" y="840" width="1920" height="1080" />
+    </state>
+    <state x="3584" y="994" key="SettingsEditor/3120.840.1920.1080/1200.840.1920.1080/0.0.1200.1880/5040.840.1920.1080@3120.840.1920.1080" timestamp="1601664679612" />
+    <state x="1864" y="1108" width="591" height="502" key="find.popup" timestamp="1601701968956">
+      <screen x="1200" y="840" width="1920" height="1080" />
+    </state>
+    <state x="1864" y="1108" width="591" height="502" key="find.popup/3120.840.1920.1080/1200.840.1920.1080/0.0.1200.1880/5040.840.1920.1080@1200.840.1920.1080" timestamp="1601701968956" />
+    <state x="3743" y="1068" width="672" height="678" key="search.everywhere.popup" timestamp="1601664645419">
+      <screen x="3120" y="840" width="1920" height="1080" />
+    </state>
+    <state x="3743" y="1068" width="672" height="678" key="search.everywhere.popup/3120.840.1920.1080/1200.840.1920.1080/0.0.1200.1880/5040.840.1920.1080@3120.840.1920.1080" timestamp="1601664645419" />
+  </component>
+</project>

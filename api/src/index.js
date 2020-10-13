@@ -13,13 +13,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.post('/', async (req, res) => {
+  // dns lookup required to get around host header protections
   const lookup = await dns.lookup(browserHost);
+  const options = req.body.options || {format: 'a4'};
 
   const browser = await puppeteer.connect({ browserURL: `http://${lookup.address}:3001` });
   const page = await browser.newPage();
 
-  await page.setContent(req.body);
-  const pdf = await page.pdf({ format: 'a4' });
+  await page.setContent(req.body.data);
+  const pdf = await page.pdf(options);
   await page.close();
 
   res.set({ 'Content-Type': 'application/pdf', 'Content-Length': pdf.length });

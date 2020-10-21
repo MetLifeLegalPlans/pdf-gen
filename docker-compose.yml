@@ -6,7 +6,9 @@ services:
     depends_on:
     - db
     volumes:
-    - ./backend:/code
+    - ./:/code
+    ports:
+      - '3000:3000'
   db:
     environment:
     - POSTGRES_PASSWORD=postgres

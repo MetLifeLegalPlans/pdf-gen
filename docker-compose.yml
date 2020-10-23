@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    depends_on:
+    - db
+    volumes:
+    - ./backend:/code
+  db:
+    environment:
+    - POSTGRES_PASSWORD=postgres
+    image: postgres:11
+    ports:
+    - 5432:5432
+version: '3.4'

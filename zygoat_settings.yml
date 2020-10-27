@@ -1,0 +1,4 @@
+name: pdf-gen
+version: 1.3.6
+exclude:
+- Frontend__DockerFile

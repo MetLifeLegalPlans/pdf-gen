@@ -59,3 +59,8 @@ def doc(request, index):
         raise NotFound("Invalid ID")
 
     return FileResponse(db_obj.pdf)
+
+
+@api_view(["GET"])
+def health(request):
+    return Response({})

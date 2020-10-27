@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["gunicorn", "backend.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "--bind=0.0.0.0:3000"]
+CMD ./manage.py wait_for_db && ./manage.py migrate && ./manage.py createcachetable && gunicorn -l uvicorn.workers.UvicornWorker -b 0.0.0.0:3000 backend.wsgi

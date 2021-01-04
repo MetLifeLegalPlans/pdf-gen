@@ -42,9 +42,9 @@ def convert_with_metadata(request):
 
 @api_view(["GET"])
 @renderer_classes([JSONRenderer])
-def metadata(request, index):
+def metadata(request, document_id):
     try:
-        pdf_file = PdfFile.objects.get(id=index)
+        pdf_file = PdfFile.objects.get(id=document_id)
     except PdfFile.DoesNotExist:
         raise NotFound("Invalid ID")
 
@@ -52,9 +52,9 @@ def metadata(request, index):
 
 
 @api_view(["GET"])
-def doc(request, index):
+def doc(request, document_id):
     try:
-        db_obj = PdfFile.objects.get(id=index)
+        db_obj = PdfFile.objects.get(id=document_id)
     except PdfFile.DoesNotExist:
         raise NotFound("Invalid ID")
 

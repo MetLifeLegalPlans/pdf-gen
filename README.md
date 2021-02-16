@@ -60,25 +60,35 @@ example:
 [
   {
     "example_anchor1": [
-      579.046875,
-      208.38
+      [
+        579.046875,
+        208.38
+      ]
     ],
     "example_anchor2": [
-      427.354,
-      305.21879
+      [
+        427.354,
+        305.21879
+      ],
+      [
+        430.5,
+        106.25
+      ]
     ]
   },
   {
     "example_anchor3": [
-      123.4,
-      654.321
+      [
+        123.4,
+        654.321
+      ]
     ]
   }
 ]
 ```
 Given an id from `convert-with-metadata/`, this endpoint will return a JSON list of all pages in the associated PDF, each with a list of anchors and their x/y coordinates on that page.
 
-The data is structured as an array of pages, each represented as an object. Each page object will have properties with the names of each anchor on that page, and each anchor will have an array of x/y coordinates, represented as floats.
+The data is structured as an array of pages, each represented as an object. Each page object will have properties with the names of each anchor on that page, and each anchor will have a 2D array of x/y coordinates, represented as floats.
 
 ---
 

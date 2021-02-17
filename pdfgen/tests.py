@@ -23,6 +23,9 @@ TEST_LINES = (
     "    <a name='test_anchor'>",
     "        This is a test anchor.",
     "    </a>",
+    "    <a name='test_anchor'>",
+    "        This is a second test anchor.",
+    "    </a>",
     "    <p>",
     "        We, the witnesses named below, sign our names to this document, after having observed John Doe",
     "        affix his or her signature to this document.",
@@ -31,7 +34,7 @@ TEST_LINES = (
     "</html>",
 )
 
-EXPECTED_METADATA = [{"test_anchor": [75.0, 75.0]}]
+EXPECTED_METADATA = [{"test_anchor": [[75.0, 75.0], [247.859375, 75.0]]}]
 
 
 class TestPdfgenViews(APITestCase):

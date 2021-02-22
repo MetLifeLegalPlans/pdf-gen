@@ -58,7 +58,10 @@ def metadata(request, document_id):
     for page in pdf_file.anchors:
         new_page = {}
         for anchor in page:
-            anchor_base_name = re.search('(.*)-[0-9]+', anchor).group(1)
+            anchor_search = re.search('(.*)-[0-9]+', anchor)
+            if anchor_search is None:
+                continue
+            anchor_base_name = anchor_search.group(1)
             anchor_coords = [page[anchor]]
 
             if anchor_base_name in new_page:

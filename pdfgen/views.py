@@ -59,11 +59,9 @@ def metadata(request, document_id):
         new_page = {}
         for anchor in page:
             anchor_search = re.search("(.*)-[0-9]+", anchor)
-            anchor_base_name = anchor
-
-            if anchor_search is not None:
-                anchor_base_name = anchor_search.group(1)
-
+            if anchor_search is None:
+                continue
+            anchor_base_name = anchor_search.group(1)
             anchor_coords = [page[anchor]]
 
             if anchor_base_name in new_page:

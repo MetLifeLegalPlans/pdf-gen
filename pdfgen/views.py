@@ -34,7 +34,8 @@ def convert_with_metadata(request):
 
     soup = BeautifulSoup(user_html, features="html5lib")
     for index, a in enumerate(soup.find_all("a")):
-        a.attrs["name"] += f"-{index}"
+        if "name" in a.attrs:
+            a.attrs["name"] += f"-{index}"
 
     pdf_file = HTML(string=str(soup)).render()
     pdf_saved = pdf_file.write_pdf()

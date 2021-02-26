@@ -39,7 +39,7 @@ def convert_with_metadata(request):
 
     font_config = FontConfiguration()
     pdf_file = HTML(string=str(soup)).render(font_config=font_config)
-    pdf_saved = pdf_file.write_pdf()
+    pdf_saved = pdf_file.write_pdf(font_config=font_config)
     data = [page.anchors for page in pdf_file.pages]
 
     pdf_suf = SimpleUploadedFile("temp.pdf", pdf_saved, content_type="application/pdf")

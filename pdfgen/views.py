@@ -19,7 +19,8 @@ def convert(request):
     except KeyError:
         raise ParseError("Missing data field")
 
-    pdf = HTML(string=user_html).write_pdf()
+    font_config = FontConfiguration()
+    pdf = HTML(string=user_html, font_config=font_config).write_pdf(font_config=font_config)
 
     response = HttpResponse(content_type="application/pdf")
     response.write(pdf)

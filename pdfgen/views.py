@@ -20,7 +20,7 @@ def convert(request):
         raise ParseError("Missing data field")
 
     font_config = FontConfiguration()
-    pdf = HTML(string=user_html).render(font_config=font_config).write_pdf(font_config=font_config)
+    pdf = HTML(string=user_html).write_pdf(font_config=font_config)
 
     response = HttpResponse(content_type="application/pdf")
     response.write(pdf)

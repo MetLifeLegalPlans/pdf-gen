@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.exceptions import NotFound, ParseError
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
-from weasyprint import HTML, CSS
+from weasyprint import HTML
 from weasyprint.fonts import FontConfiguration
 import re
 
@@ -19,11 +19,8 @@ def convert(request):
     except KeyError:
         raise ParseError("Missing data field")
 
-    soup = BeautifulSoup(user_html, features="html5lib")
     font_config = FontConfiguration()
-
-    stylesheet = CSS(string=soup.find('style').string, font_config=font_config)
-    pdf = HTML(string=user_html).write_pdf(stylesheets=[stylesheet], font_config=font_config)
+    pdf = HTML(string=user_html).write_pdf(font_config=font_config)
 
     response = HttpResponse(content_type="application/pdf")
     response.write(pdf)
@@ -42,8 +39,7 @@ def convert_with_metadata(request):
         a.attrs["name"] += f"-{index}"
 
     font_config = FontConfiguration()
-    stylesheet = CSS(string=soup.find('style').string, font_config=font_config)
-    pdf_file = HTML(string=str(soup)).render(stylesheets=[stylesheet], font_config=font_config)
+    pdf_file = HTML(string=str(soup)).render(font_config=font_config)
     pdf_saved = pdf_file.write_pdf(font_config=font_config)
     data = [page.anchors for page in pdf_file.pages]
 

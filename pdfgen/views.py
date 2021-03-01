@@ -6,6 +6,7 @@ from rest_framework.exceptions import NotFound, ParseError
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from weasyprint import HTML
+from weasyprint.fonts import FontConfiguration
 import re
 
 from .models import PdfFile
@@ -18,7 +19,8 @@ def convert(request):
     except KeyError:
         raise ParseError("Missing data field")
 
-    pdf = HTML(string=user_html).write_pdf()
+    font_config = FontConfiguration()
+    pdf = HTML(string=user_html).write_pdf(font_config=font_config)
 
     response = HttpResponse(content_type="application/pdf")
     response.write(pdf)
@@ -36,7 +38,8 @@ def convert_with_metadata(request):
     for index, a in enumerate(soup.find_all("a")):
         a.attrs["name"] += f"-{index}"
 
-    pdf_file = HTML(string=str(soup)).render()
+    font_config = FontConfiguration()
+    pdf_file = HTML(string=str(soup)).render(font_config=font_config)
     pdf_saved = pdf_file.write_pdf()
     data = [page.anchors for page in pdf_file.pages]
 

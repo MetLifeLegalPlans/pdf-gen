@@ -12,3 +12,4 @@ uvicorn[standard]==0.12.2
 WeasyPrint==52.2
 zygoat-django==0.2.0
 beautifulsoup4==4.9.3
+django-cprofile-middleware==1.0.5

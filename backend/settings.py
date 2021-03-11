@@ -52,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_cprofile_middleware.middleware.ProfilerMiddleware",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -122,3 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
+
+DJANGO_CPROFILE_MIDDLEWARE_REQUIRE_STAFF = False

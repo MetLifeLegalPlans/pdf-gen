@@ -1,5 +1,10 @@
 FROM python:3
 
+RUN mkdir -p /usr/share/fonts/truetype
+COPY fonts/* /usr/share/fonts/truetype/
+
+RUN fc-cache -fv
+
 RUN mkdir /code
 WORKDIR /code
 

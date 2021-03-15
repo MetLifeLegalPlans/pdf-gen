@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.db import transaction
 from django.http import FileResponse, HttpResponse
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.exceptions import NotFound, ParseError
@@ -7,7 +8,9 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from weasyprint import HTML
 from weasyprint.fonts import FontConfiguration
+
 import re
+import uuid
 
 from .models import PdfFile
 
@@ -28,6 +31,7 @@ def convert(request):
 
 
 @api_view(["POST"])
+@transaction.atomic
 def convert_with_metadata(request):
     try:
         user_html = request.data["data"]
@@ -44,7 +48,9 @@ def convert_with_metadata(request):
     pdf_saved = pdf_file.write_pdf()
     data = [page.anchors for page in pdf_file.pages]
 
-    pdf_suf = SimpleUploadedFile("temp.pdf", pdf_saved, content_type="application/pdf")
+    pdf_suf = SimpleUploadedFile(
+        "{}.pdf".format(str(uuid.uuid4())), pdf_saved, content_type="application/pdf"
+    )
     db_obj = PdfFile.objects.create(pdf=pdf_suf, anchors=data)
 
     return Response({"id": db_obj.pk})

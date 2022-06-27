@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 
-from zygoat_django.settings import *  # noqa
+from zygoat_django.settings.environment import *  # noqa
+from zygoat_django.settings.rest_framework import *  # noqa
 from pathlib import Path
 
 env = environ.Env()

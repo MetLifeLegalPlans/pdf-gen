@@ -4,15 +4,15 @@ services:
       context: .
       dockerfile: Dockerfile.local
     depends_on:
-    - db
+      - db
     volumes:
-    - ./:/code
+      - ./:/code
     ports:
       - '3000:3000'
   db:
     environment:
-    - POSTGRES_PASSWORD=postgres
+      - POSTGRES_PASSWORD=postgres
     image: postgres:11
     ports:
-    - 5432:5432
+      - 5432:5432
 version: '3.4'

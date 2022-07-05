@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "zygoat_django",
     "rest_framework",
     "backend",
-    "zygoat_django",
     "pdfgen",
 ]
 

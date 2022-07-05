@@ -272,3 +272,8 @@ dist
 .tern-port
 
 media/
+
+# Performance profiling tests
+data.txt
+test.py
+out.html

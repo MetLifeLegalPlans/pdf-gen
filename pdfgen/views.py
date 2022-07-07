@@ -7,7 +7,7 @@ from rest_framework.exceptions import NotFound, ParseError
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from weasyprint import HTML
-from weasyprint.text.fonts import FontConfiguration
+from weasyprint.fonts import FontConfiguration
 
 import re
 import uuid

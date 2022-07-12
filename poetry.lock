@@ -508,11 +508,11 @@ flake8 = "*"
 
 [[package]]
 name = "fonttools"
-version = "4.33.3"
+version = "4.18.0"
 description = "Tools to manipulate font files"
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.6"
 
 [package.dependencies]
 brotli = {version = ">=1.0.1", optional = true, markers = "platform_python_implementation == \"CPython\" and extra == \"woff\""}
@@ -520,17 +520,16 @@ brotlicffi = {version = ">=0.8.0", optional = true, markers = "platform_python_i
 zopfli = {version = ">=0.1.4", optional = true, markers = "extra == \"woff\""}
 
 [package.extras]
-all = ["fs (>=2.2.0,<3)", "lxml (>=4.0,<5)", "zopfli (>=0.1.4)", "lz4 (>=1.7.4.2)", "matplotlib", "sympy", "skia-pathops (>=0.5.0)", "uharfbuzz (>=0.23.0)", "brotlicffi (>=0.8.0)", "scipy", "brotli (>=1.0.1)", "munkres", "unicodedata2 (>=14.0.0)", "xattr"]
+all = ["fs (>=2.2.0,<3)", "lxml (>=4.0,<5)", "zopfli (>=0.1.4)", "lz4 (>=1.7.4.2)", "matplotlib", "sympy", "skia-pathops (>=0.5.0)", "brotlicffi (>=0.8.0)", "scipy", "brotli (>=1.0.1)", "munkres", "unicodedata2 (>=13.0.0)", "xattr"]
 graphite = ["lz4 (>=1.7.4.2)"]
 interpolatable = ["scipy", "munkres"]
 lxml = ["lxml (>=4.0,<5)"]
 pathops = ["skia-pathops (>=0.5.0)"]
 plot = ["matplotlib"]
-repacker = ["uharfbuzz (>=0.23.0)"]
 symfont = ["sympy"]
 type1 = ["xattr"]
 ufo = ["fs (>=2.2.0,<3)"]
-unicode = ["unicodedata2 (>=14.0.0)"]
+unicode = ["unicodedata2 (>=13.0.0)"]
 woff = ["zopfli (>=0.1.4)", "brotlicffi (>=0.8.0)", "brotli (>=1.0.1)"]
 
 [[package]]
@@ -724,6 +723,14 @@ python-versions = ">=3.6"
 [package.extras]
 dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
+
+[[package]]
+name = "psycopg2"
+version = "2.9.3"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
+optional = false
+python-versions = ">=3.6"
 
 [[package]]
 name = "psycopg2-binary"
@@ -1089,7 +1096,7 @@ anyio = ">=3.0.0,<4"
 
 [[package]]
 name = "weasyprint"
-version = "55.0"
+version = "56.0"
 description = "The Awesome Document Factory"
 category = "main"
 optional = false
@@ -1101,13 +1108,13 @@ cssselect2 = ">=0.1"
 fonttools = {version = ">=4.0.0", extras = ["woff"]}
 html5lib = ">=1.1"
 Pillow = ">=4.0.0"
-pydyf = ">=0.0.3"
+pydyf = ">=0.2.0"
 Pyphen = ">=0.9.1"
 tinycss2 = ">=1.0.0"
 
 [package.extras]
 doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest", "pytest-cov", "pytest-flake8", "pytest-isort", "coverage"]
+test = ["pytest", "pytest-xdist", "pytest-flake8", "pytest-isort", "pytest-cov", "coverage"]
 
 [[package]]
 name = "webencodings"
@@ -1176,7 +1183,7 @@ uvicorn = {version = ">=0.13.0", extras = ["standard"]}
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "f8afcd7b4c6975a4a34762bc0534576c47dd835432a3a7fdafb7c4322293202d"
+content-hash = "f8718f8675e86da15cdeb7704c349bab175800a058a757364d01cbba17960b5f"
 
 [metadata.files]
 anyio = [
@@ -1531,10 +1538,7 @@ flake8-mock = [
 flake8-quotes = [
     {file = "flake8-quotes-3.3.1.tar.gz", hash = "sha256:633adca6fb8a08131536af0d750b44d6985b9aba46f498871e21588c3e6f525a"},
 ]
-fonttools = [
-    {file = "fonttools-4.33.3-py3-none-any.whl", hash = "sha256:f829c579a8678fa939a1d9e9894d01941db869de44390adb49ce67055a06cc2a"},
-    {file = "fonttools-4.33.3.zip", hash = "sha256:c0fdcfa8ceebd7c1b2021240bd46ef77aa8e7408cf10434be55df52384865f8e"},
-]
+fonttools = []
 gitdb = [
     {file = "gitdb-4.0.9-py3-none-any.whl", hash = "sha256:8033ad4e853066ba6ca92050b9df2f89301b8fc8bf7e9324d412a63f8bf1a8fd"},
     {file = "gitdb-4.0.9.tar.gz", hash = "sha256:bac2fd45c0a1c9cf619e63a90d62bdc63892ef92387424b855792a6cabe789aa"},
@@ -1674,6 +1678,19 @@ platformdirs = [
 pluggy = [
     {file = "pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
     {file = "pluggy-1.0.0.tar.gz", hash = "sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"},
+]
+psycopg2 = [
+    {file = "psycopg2-2.9.3-cp310-cp310-win32.whl", hash = "sha256:083707a696e5e1c330af2508d8fab36f9700b26621ccbcb538abe22e15485362"},
+    {file = "psycopg2-2.9.3-cp310-cp310-win_amd64.whl", hash = "sha256:d3ca6421b942f60c008f81a3541e8faf6865a28d5a9b48544b0ee4f40cac7fca"},
+    {file = "psycopg2-2.9.3-cp36-cp36m-win32.whl", hash = "sha256:9572e08b50aed176ef6d66f15a21d823bb6f6d23152d35e8451d7d2d18fdac56"},
+    {file = "psycopg2-2.9.3-cp36-cp36m-win_amd64.whl", hash = "sha256:a81e3866f99382dfe8c15a151f1ca5fde5815fde879348fe5a9884a7c092a305"},
+    {file = "psycopg2-2.9.3-cp37-cp37m-win32.whl", hash = "sha256:cb10d44e6694d763fa1078a26f7f6137d69f555a78ec85dc2ef716c37447e4b2"},
+    {file = "psycopg2-2.9.3-cp37-cp37m-win_amd64.whl", hash = "sha256:4295093a6ae3434d33ec6baab4ca5512a5082cc43c0505293087b8a46d108461"},
+    {file = "psycopg2-2.9.3-cp38-cp38-win32.whl", hash = "sha256:34b33e0162cfcaad151f249c2649fd1030010c16f4bbc40a604c1cb77173dcf7"},
+    {file = "psycopg2-2.9.3-cp38-cp38-win_amd64.whl", hash = "sha256:0762c27d018edbcb2d34d51596e4346c983bd27c330218c56c4dc25ef7e819bf"},
+    {file = "psycopg2-2.9.3-cp39-cp39-win32.whl", hash = "sha256:8cf3878353cc04b053822896bc4922b194792df9df2f1ad8da01fb3043602126"},
+    {file = "psycopg2-2.9.3-cp39-cp39-win_amd64.whl", hash = "sha256:06f32425949bd5fe8f625c49f17ebb9784e1e4fe928b7cce72edc36fb68e4c0c"},
+    {file = "psycopg2-2.9.3.tar.gz", hash = "sha256:8e841d1bf3434da985cc5ef13e6f75c8981ced601fd70cc6bf33351b91562981"},
 ]
 psycopg2-binary = [
     {file = "psycopg2-binary-2.9.3.tar.gz", hash = "sha256:761df5313dc15da1502b21453642d7599d26be88bff659382f8f9747c7ebea4e"},
@@ -1912,10 +1929,7 @@ watchfiles = [
     {file = "watchfiles-0.15.0-cp37-abi3-win_arm64.whl", hash = "sha256:82238d08d8a49f1a1ba254278cd4329a154f6100b028393059722ebeddd2ff3d"},
     {file = "watchfiles-0.15.0.tar.gz", hash = "sha256:cab62510f990d195986302aa6a48ed636d685b099927049120d520c96069fa49"},
 ]
-weasyprint = [
-    {file = "weasyprint-55.0-py3-none-any.whl", hash = "sha256:6a5008b3e1152498f206b2d0791b3e161f507607e31ca42b307cb31b49795462"},
-    {file = "weasyprint-55.0.tar.gz", hash = "sha256:ea5d5f2f159262e38b6e85939d8510e9735a47751a9647c9eaa93c22ced86230"},
-]
+weasyprint = []
 webencodings = [
     {file = "webencodings-0.5.1-py2.py3-none-any.whl", hash = "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"},
     {file = "webencodings-0.5.1.tar.gz", hash = "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"},

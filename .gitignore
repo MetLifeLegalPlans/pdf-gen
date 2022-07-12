@@ -274,6 +274,7 @@ dist
 media/
 
 # Performance profiling tests
-data.txt
+*.pdf
+*.html
+*.txt
 test.py
-out.html

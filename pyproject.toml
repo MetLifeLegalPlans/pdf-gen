@@ -15,7 +15,7 @@ authors = [ "Metlife Legal Plans <mrawls@legalplans.com>",]
 [tool.poetry.dependencies]
 python = "^3.9"
 boto3 = "^1.24.18"
-Django = "^4.0.5"
+Django = "^4.0.9"
 psycopg2 = "^2.9.3"
 django-cors-headers = "^3.13.0"
 django-storages = "^1.12.3"

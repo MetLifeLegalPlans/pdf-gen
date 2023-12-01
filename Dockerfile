@@ -1,14 +1,10 @@
-FROM python:3.9
-
-RUN pip install --upgrade pip poetry
+FROM 818831340115.dkr.ecr.us-east-1.amazonaws.com/python:3.9
 
 RUN mkdir -p /usr/share/fonts/truetype
 COPY fonts/* /usr/share/fonts/truetype/
 
 RUN fc-cache -fv
 
-RUN mkdir /code
-WORKDIR /code
 COPY . .
 
 ENV PYTHONPATH /code

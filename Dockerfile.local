@@ -1,4 +1,4 @@
-FROM 818831340115.dkr.ecr.us-east-1.amazonaws.com/python:3.9
+FROM 818831340115.dkr.ecr.us-east-1.amazonaws.com/python:3.10
 
 RUN mkdir -p /usr/share/fonts/truetype
 COPY fonts/* /usr/share/fonts/truetype/

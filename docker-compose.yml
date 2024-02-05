@@ -1,5 +1,9 @@
 services:
   backend:
+    container_name: pdf-gen-backend
+    networks:
+      - default
+      - shared
     build:
       context: .
       dockerfile: Dockerfile.local
@@ -16,3 +20,7 @@ services:
     ports:
       - 5432:5432
 version: '3.4'
+
+networks:
+  shared:
+    name: mlp_network

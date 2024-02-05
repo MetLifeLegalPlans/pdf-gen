@@ -1,4 +1,4 @@
-FROM 818831340115.dkr.ecr.us-east-1.amazonaws.com/python:3.9
+FROM 818831340115.dkr.ecr.us-east-1.amazonaws.com/python:3.10
 
 RUN mkdir -p /usr/share/fonts/truetype
 COPY fonts/* /usr/share/fonts/truetype/
@@ -9,4 +9,4 @@ ADD pyproject.toml /code/
 ADD poetry.lock /code/
 RUN poetry install
 
-CMD poetry run ./manage.py wait_for_db && poetry run ./manage.py migrate && poetry run ./manage.py createcachetable && poetry run ./manage.py runserver 0.0.0.0:3000
+CMD poetry run python ./manage.py wait_for_db && poetry run python ./manage.py migrate && poetry run python ./manage.py createcachetable && poetry run python ./manage.py runserver 0.0.0.0:3000
